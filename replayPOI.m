@@ -1,5 +1,5 @@
 function replayPOI(filename,startT,endT,pointsallX,pointsallY,indl,indfl,indfr,indr)
-videoFileReader = VideoReader('vid.mp4');
+videoFileReader = VideoReader(filename);
 videoFileReader.CurrentTime = startT;
 videoFrame = readFrame(videoFileReader);
 frmpointer=1;
