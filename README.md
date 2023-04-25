@@ -1,7 +1,4 @@
 # eyetracking
-this text has been made with a help of chatGPT
-
-
 <p>This MATLAB program is designed to detect movements of eigenfeatures in an area of interest and plot them with user-added notes. </p>
 Requirements
 <ul>
