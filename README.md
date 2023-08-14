@@ -10,6 +10,7 @@ Getting Started
   <li>Clone or download this repository to your local machine</li>
   <li>Open the MATLAB software and navigate to the folder where the repository was cloned/downloaded</li>
   <li>Run the <code>main.m</code> file to start the program</li>
+  <li>Alternativaly you can run the <code>mainautomatic.m</code> file to start the analysis of nystagmus in nursling</li>
   <li>add timestamps and notes for your plot</li>
   <li>The program will prompt you to select the area of interest image</li>
   <li>The program will perform detection of movements of eigenfeatures in the image</li>
@@ -19,7 +20,8 @@ Getting Started
   <li>The final plot with user-added notes can be saved as an image file</li>
 </ol>
 Test File and Sample Plot
-<p>A test video file (<code>video.mp4</code>) and a sample plot (<code>sample_online.png</code>) are provided in the repository to demonstrate the functionality of the program.</p>
+<p>A test video file (<code>video.mp4</code>) and a sample plot (<code>sample_online.png</code>) are provided in the repository to demonstrate the functionality of the program.</p><br>
+<p>A video file (<code>horizontal nystagmus.mp4</code>)</p>
 Notes
 <ul>
   <li>The program is designed for use with 2D color images</li>
