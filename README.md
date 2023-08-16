@@ -18,10 +18,10 @@ Getting Started
   <li>The program will plot eye movements</li>
   <li>The final plot with user-added notes can be saved as an image file</li>
 </ol>
+<p>
 Test File and Sample Plot  <br>
 A test video file (<code>horizontal nystagmus.png</code>) and a sample plots (<code>turnleft.png, turnright.png</code>) are provided in the repository to demonstrate the functionality of the program.</li>
-
-<br><br>
+</p>
 Notes
 <ul>
   <li>The program is designed for use with 2D color images</li>
