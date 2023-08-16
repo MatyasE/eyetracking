@@ -1,11 +1,16 @@
-function [pointsallX, pointsallY]=detectfeaturesinROI(vid,startTime,endTime,bidirer)
-% označí se čtyři body (musí psát prompty)
+function [pointsallX, pointsallY]=detectfeaturesinROI(vid,startTime,endTime,bidirer, sizefig)
+
 
 videoFileReader = VideoReader(vid);
 videoFileReader.CurrentTime = startTime;
 videoFrame = readFrame(videoFileReader);
 figure; imshow(videoFrame); 
+
+promptText = text(sizefig(1)/10,sizefig(2)/10, strcat("draw rectangle around area of interest"),'FontSize',14,'FontWeight','bold','Color','r');
+
+
 rect=drawrectangle();
+delete(promptText);
 
 objectRegion=round(rect.Position);%imrect
 points=detectMinEigenFeatures(rgb2gray(videoFrame),'ROI',objectRegion);%,

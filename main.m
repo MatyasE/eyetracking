@@ -1,18 +1,33 @@
 %this file presents a prepared configuration for analysis of sample video
-filename='video.mp4';
-startT=0;
-endT=19;
-bidirer=6;
-rot=[1.7 5.2 8.8 11.7 15.2 17.6];
-texts={'head rot. right', 'head rot. left','eyes to right','eyes to left','eyes to right','eyes to left'} %, 'head rot. right','eyes to right','eyes to left' 
+%of child with nystagmus
+filename='horizontal nystagmus.avi';
 
+% for the analysis of the rotation to the left set leftrotation to 1,
+% otherwise rotation to the right will be analyzed
+%change bidirer accordingly
+leftrotation=0;
+if leftrotation==1
+    startT=31;
+    endT=38;
+    texts={'turn left'};
+    rot=[1.6];
+    bidirer=30;
+else
+    startT=1;
+    endT=11;
+    rot=[2.2 8];
+    bidirer=30;
+    texts={'turn right' 'nystagmus stops'};
+end
 
 %%detect eigenfeatures in ROI
 fs=VideoReader(filename).FrameRate;
-[pointsallX, pointsallY]=detectfeaturesinROI(filename,startT,endT,bidirer);
-points=[pointsallX(:,end) pointsallY(:,end)];
 fig=gcf;
 sizefig=fig.Position(3:4);
+[pointsallX, pointsallY]=detectfeaturesinROI(filename,startT,endT,bidirer, sizefig);
+points=[pointsallX(:,end) pointsallY(:,end)];
+
+
 
 %%highlight required eigenfeatures
 indl=higlightfeaturesclosetoPOI(sizefig,points,"left eye pupil");
@@ -32,4 +47,3 @@ replayPOI(filename,startT,endT,pointsallX,pointsallY,indl,indfl,indfr,indr);
 %%plot it
 time=linspace(0,length(pointsLeft)/fs,length(pointsLeft));
 plotmovements(time,fs,pointsLeft,pointsFixedLeft,pointsFixedRight,pointsRight,rot,texts);
-
